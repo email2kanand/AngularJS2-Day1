@@ -1,0 +1,122 @@
+ 
+ 
+<div style=" margin-top:1%;margin-left:16%;">
+{{msg}}
+ </div>
+ 
+
+<!--<div *ngIf="employee">  it will not show when employe will be null -->
+	<div>
+  <label>Employee ID:</label> <input type="text" [(ngModel)]="employee.id"/>
+  <label>Employee Name:</label><input type="text" [(ngModel)]="employee.name"/>
+  <label>Employee Email:</label> <input type="text" [(ngModel)]="employee.email"/>
+  <button (click)="addEmployee(employee)">
+    Add
+  </button>
+</div>
+
+<!--<label>Employee ID:</label> <input #employeeId />
+<label>Employee Name:</label> <input #employeeName />
+<label>Employee Email:</label> <input #employeeEmail />
+  <button (click)="add(employeeId.value,employeeName.value,employeeEmail.value); employeeName.value=''">
+    Add
+  </button>-->
+
+<div style=" margin-top:1%;margin-left:16%;">
+   
+ Employee List:
+ 
+</div>
+<div style=" margin-top:1%;margin-left:16%;">
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+				<th>Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees" >
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+            
+    <td>
+      <button (click)="editEmployee(employee.id)" >edit</button> | 
+      <button   (click)="deleteEmployee(employee.id)" >delete</button>
+        <!--<a href="" (click)="edit(employee.id)" >edit</a> | 
+        <a href="" (click)="remove(employee.id)" >delete</a>-->
+    </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!--<li *ngFor="let employee of employees" (click)="onSelect(hero)">
+  <span class="badge">{{employee.id}}</span> 
+  <span>{{employee.name}}</span>
+</li>-->
+
+
+
+
+<!--<div class="container" style="margin-left: 250px; margin-top: 20px;background-color:#E3F3F2;width:400px"
+ ng-init="newEmployee.employeeName='';newEmployee.mobile=' ';newEmployee.email=' ';newEmployee.age=' ';">
+	<form novalidate class="user-form" id="addUserForm" name="Employeeform">
+		<div class="form-group">		
+			<div >
+			<label for="EmployeeName" style=" margin-top: 5%;">Employee Name: </label>
+				<input type="text"  id="employeeName" style=" margin-top: 2%;margin-left:0%;"
+					placeholder="Enter Employee Name" ng-model="newEmployee.employeeName"
+					required name="employeeName" /><!--  <span style="color: red;" 
+					ng-show="Employeeform.employeeName.$error.required">Employee Name is Required!</span>
+			</div>
+			
+			<div>
+			<label for="Mobile" style=" margin-top: 2%;">Mobile: </label>
+				<input type="number" style="margin-left:16.5%; " id="mobile"
+					placeholder="Enter Mobile Number" ng-model="newEmployee.mobile"
+					required ng-minlength="10" name="mobile" /> 
+					
+					<span style="color: red;"
+					ng-show="Employeeform.mobile.$error.required">Mobile Number is Required!</span>
+					<!-- <span style="color: red;"
+					ng-show="Employeeform.mobile.$error.number"> Mobile Number should be in digit !</span> 
+					<span style="color: red;"
+					ng-show="Employeeform.mobile.$error.minlength">Invalid Mobile Number!</span>
+			</div>
+			
+			<div>
+			<label for="EmailID" style=" margin-top: 2%;">Email ID: </label>
+				<input type="email" style=" margin-top:1%;margin-left:14%;" id="email"
+					placeholder="Enter Email ID" ng-model="newEmployee.email"
+					required name="email" /> 
+					<span style="color: red;"
+					ng-show="Employeeform.email.$error.required">Email ID  is Required!</span>
+					
+					 
+					 
+			</div>
+			
+			<div>
+			<label for="Age"  style=" margin-top: 2%;">Age: </label>
+				<input type="number" style=" margin-top: 2%;margin-left:21%" id="age"
+					placeholder=" Enter your  Age" ng-model="newEmployee.age"
+					required name="age" /> <span style="color: red;"
+					ng-show="Employeeform.age.$error.required">Age is Required!</span>
+			</div>
+			
+			<div class="row">
+			
+			<div style="margin-left:11%; margin-top: 3%;">
+				 <input type="hidden" ng-model="newEmployee.id" />
+			<input type="submit" value="Save" class="btn btn-info" ng-click="save()" />
+				<button type="reset" class="btn btn-info"
+					style="margin-left: 6%; margin-top: .5%;">Reset</button>
+			</div>
+		</div>
+		</div>
+	</form>
+</div> -->
